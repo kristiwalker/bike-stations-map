@@ -17,6 +17,8 @@ var gulp        = require('gulp'),
     plumber     = require('gulp-plumber'),
     deploy      = require('gulp-gh-pages'),
     notify      = require('gulp-notify');
+    babel       = require('gulp-babel');
+
 
 
 gulp.task('scss', function() {
@@ -57,13 +59,18 @@ gulp.task('deploy', function () {
         .pipe(deploy());
 });
 
+gulp.task('babel', function() {
+    gulp.src('build/js/main.js')
+        .pipe(babel({presets: ['@babel/env']}))
+        .pipe(uglify())
+        .pipe(size({ gzip: true, showFiles: true }))
+        .pipe(concat('main.js'))
+        .pipe(gulp.dest('dist/js'))
+        .pipe(reload({stream:true}));
+});
+
 gulp.task('js', function() {
-  gulp.src('build/js/*.js')
-    .pipe(uglify())
-    .pipe(size({ gzip: true, showFiles: true }))
-    .pipe(concat('j.js'))
-    .pipe(gulp.dest('dist/js'))
-    .pipe(reload({stream:true}));
+  gulp.src('build/js/babel/*.js');
 });
 
 gulp.task('scss-lint', function() {
@@ -92,9 +99,10 @@ gulp.task('jshint', function() {
 
 gulp.task('watch', function() {
   gulp.watch('build/scss/**/*.scss', ['scss']);
-  gulp.watch('js/*.js', ['jshint', 'js']);
-  gulp.watch('./*.html', ['minify-html']);
-  gulp.watch('img/*', ['imgmin']);
+  gulp.watch('build/js/babel/*.js', ['babel']);
+  gulp.watch('build/js/**/*.js', ['jshint']);
+  gulp.watch('build/*.html', ['minify-html']);
+  gulp.watch('build/img/*', ['imgmin']);
 });
 
 gulp.task('imgmin', function () {
@@ -107,4 +115,4 @@ gulp.task('imgmin', function () {
         .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('default', ['browser-sync', 'js', 'imgmin', 'minify-html', 'scss', 'watch']);
+gulp.task('default', ['browser-sync', 'babel', 'imgmin', 'minify-html', 'scss', 'watch']);
