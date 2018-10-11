@@ -99,7 +99,7 @@ gulp.task('jshint', function() {
 
 gulp.task('watch', function() {
   gulp.watch('build/scss/**/*.scss', ['scss']);
-  gulp.watch('build/js/babel/*.js', ['babel']);
+  gulp.watch('build/js/**/*.js', ['babel']);
   gulp.watch('build/js/**/*.js', ['jshint']);
   gulp.watch('build/*.html', ['minify-html']);
   gulp.watch('build/img/*', ['imgmin']);
@@ -115,4 +115,4 @@ gulp.task('imgmin', function () {
         .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('default', ['browser-sync', 'babel', 'imgmin', 'minify-html', 'scss', 'watch']);
+gulp.task('default', ['browser-sync', 'babel', 'jshint', 'imgmin', 'minify-html', 'scss', 'watch']);
