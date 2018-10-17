@@ -115,3 +115,12 @@ gulp.task('imgmin', function () {
 });
 
 gulp.task('default', ['browser-sync', 'babel', 'jshint', 'imgmin', 'minify-html', 'scss', 'watch']);
+
+/*****************************************************************************
+DEPLOYMENT TASKS
+*****************************************************************************/
+
+// sequences build task to publish on Netlify
+gulp.task('build', function(callback) {
+  // deploy!
+});
