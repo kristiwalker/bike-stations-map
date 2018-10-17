@@ -1,26 +1,37 @@
 @import 'base/base';
+
 $primary: #B82233;
 $black: #333333;
 $gray: #666666;
 $secondary-dark: #007491;
 $secondary-light: #4DC7E0;
-$regular-text: 18px;
+
+$reg-text: 18px;
+
+$sm-screen: 468px;
 
 $sans: 'helvetica', 'arial', sans-serif;
 
-.interactive {
+.interactive-app { // nested for scoping
     width: 100vw;
     height: auto;
     display: flex;
     justify-content: center;
     font-family: $sans;
 
+    @media only screen and (max-width: $sm-screen) {
+        flex-direction: column;
+    }
     .side-bar {
         background: $secondary-dark;
         height: 100vh;
         width: 100%;
         max-width: 400px;
         padding: 3em;
+
+        @media only screen and (max-width: $sm-screen) {
+            max-height: auto;
+        }
     }
 
     h1 {
@@ -28,9 +39,10 @@ $sans: 'helvetica', 'arial', sans-serif;
         font-size: 30px;
     }
 
-    p {
+    h2 {
         color: white;
-        font-size: $regular-text;
+        font-size: 20px;
+        font-weight: normal;
     }
 
     .map__container {
@@ -40,10 +52,9 @@ $sans: 'helvetica', 'arial', sans-serif;
     }
 
     img#logo {
-        max-width: 100px;
-        max-height: 100px;
+        max-width: 120px;
         position: absolute;
-        right: 50px;
+        right: 10%;
         top: 0;
         z-index: 1;
     }
@@ -52,28 +63,39 @@ $sans: 'helvetica', 'arial', sans-serif;
         margin-bottom: 3em;
         width: 100%;
         height: 100%;
-    }
-
-    button {
-        max-width: 200px;
+        min-width: 500px;
     }
 
     .marker {
         // background-image: url('mapbox-icon.png');
         background-size: cover;
-        background: white;
-        width: 15px;
-        height: 15px;
+        background: $secondary-dark;
+        width: 25px;
+        height: 25px;
         border-radius: 50%;
-        border: 3px solid $primary;
+        border: 3px solid $secondary-dark;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+
+        &:hover,
+        &.selected {
+            background: white;
+            color: $black;
+        }
     }
 
-    button {
-        font-size: $regular-text;
-        height: 50px;
-        background: white;
-        font-size: $regular-text;
-        box-shadow: none;
+    input,
+    textarea {
+        width: 100%;
+        font-size: $reg-text;
+        color: $gray;
     }
-}
+
+    .form-elements label {
+        font-size: $reg-text;
+        color: white;
+    }
+} // END INTERACTIVE MAP

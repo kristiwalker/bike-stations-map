@@ -60,11 +60,10 @@ gulp.task('deploy', function () {
 });
 
 gulp.task('babel', function() {
-    gulp.src('build/js/main.js')
+    gulp.src('build/js/*.js')
         .pipe(babel({presets: ['@babel/env']}))
         .pipe(uglify())
         .pipe(size({ gzip: true, showFiles: true }))
-        .pipe(concat('main.js'))
         .pipe(gulp.dest('dist/js'))
         .pipe(reload({stream:true}));
 });
