@@ -17,20 +17,13 @@ const app = {
             container: "map",
             style: "mapbox://styles/mapbox/outdoors-v9",
             center: [-118, 34], // starting position [lng, lat]
-            zoom: 3
+            zoom: 10
         });
 
-        console.log(data);
-
-                // add markers to map
+        // add markers to map
         data.features.forEach(function(marker) {
-
-        // var marker = new mapboxgl.Marker()
-        //   .setLngLat([-118, 34])
-        //   .addTo(map);
-
           // create a HTML element for each feature
-          var el = document.createElement('div');
+          let el = document.createElement('div');
           el.className = 'marker';
 
           // make a marker for each feature and add to the map
@@ -38,28 +31,7 @@ const app = {
           .setLngLat(marker.geometry.coordinates)
           .addTo(map);
         });
-
-
-// map.on('load', function () {
-//     map.addLayer({
-//         "id": "points",
-//         "type": "symbol",
-//         "source": {
-//             "type": "geojson",
-//             "data": data
-//         },
-//         "layout": {
-//             "icon-image": "{icon}-15",
-//             "text-field": "{title}",
-//             "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-//             "text-offset": [0, 0.6],
-//             "text-anchor": "top"
-//         }
-//     });
-// });
-
-
-    }
+    },
 };
 
 $('document').ready(function() {
