@@ -1,5 +1,5 @@
 # bike-stations-map
-This is an interactive map of potential bike share stations that allows users to submit feedback.
+This is an interactive map of potential bike share stations that allows users to submit feedback. You can find it live h
 
 ## Starter Environment
 We just needs a simple gulp environment that will spin up a server, pre-compile Sass and run a few other tasks. For simple projects like this, I use [gulp-starter-env](https://github.com/una/gulp-starter-env
@@ -7,7 +7,7 @@ We just needs a simple gulp environment that will spin up a server, pre-compile 
 
 ## Email form submission
 We want to collect data on what people think, but we don't need a fancy server. After some research, I think this [tutorial on Submitting Emails to Google Sheets](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server
-) serves our needs well. It'll route form submissions to a designated email address, but they'll also get logged in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JMICpFkrbPD09BMSx19zjDElKsM6BMoPY-hYQ1ZaACw/edit?usp=sharing), which is the real game changer.
+) serves our needs well. It'll route form submissions to a designated email address, but they'll also get logged in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JMICpFkrbPD09BMSx19zjDElKsM6BMoPY-hYQ1ZaACw/edit?usp=sharing), which is the real game changer. Try submitting feedback in the live site and checking the spreadsheet to see for yourself!
 
 ### Notes
 - I noticed afterward that the timestamp is wrong, but that would be an easy fix with more time.
