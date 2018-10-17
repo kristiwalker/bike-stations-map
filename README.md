@@ -15,7 +15,7 @@ We want to collect data on what people think, but we don't need a fancy server. 
 - I ran out of time to style the button, but it would have been larger, easy to read and accented for visibility.
 
 ## Potential features
-Although I didn't have time for a design process, I know I'd want to add a few things if I'd had more time:
+Although I didn't have time for a design process, I already know I'd want to add a few things if I'd had more time. This list would certainly grow with more thought, too:
 
 - A way for users to choose from a checklist and/or click on markers to submit a list of the bike paths they like.
 - Integrate the feedback panel into the map on mobile so that you don't have to scroll back and forth.
