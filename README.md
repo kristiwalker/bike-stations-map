@@ -6,7 +6,7 @@ We just needs a simple gulp environment that will spin up a server, pre-compile 
 ), which serves that need. You can follow the instructions to set up, but make sure you clone this repo instead of the one they list.
 
 ## Email form submission
-We want to collect data on what people think, but we don't need a fancy server. After some research, I think this [tutorial on Google Scripts](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server
+We want to collect data on what people think, but we don't need a fancy server. After some research, I think this [tutorial on Submitting Emails to Google Sheets](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server
 ) serves our needs well. It'll route form submissions to a designated email address, but they'll also get logged in [this spreadsheet](https://docs.google.com/spreadsheets/d/1JMICpFkrbPD09BMSx19zjDElKsM6BMoPY-hYQ1ZaACw/edit?usp=sharing), which is the real game changer.
 
 ### Notes
