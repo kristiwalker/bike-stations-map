@@ -1,6 +1,5 @@
 /*jshint esversion: 6 */
 const app = {
-    map: '',
     initScripts() {
         app.getData();
     },
@@ -13,11 +12,13 @@ const app = {
     },
     initMap(data) {
         mapboxgl.accessToken = 'pk.eyJ1Ijoid2Fsa2Vya2QiLCJhIjoiY2puM2pnYTN1MGgzdzNwczB3Z3dzcTc4NiJ9._x2BubnJZmAn6S5qlyj07g';
+
+        // draw map base
         var map = new mapboxgl.Map({
             container: "map",
-            style: "mapbox://styles/mapbox/outdoors-v9",
-            center: [-118, 34], // starting position [lng, lat]
-            zoom: 10
+            style: "mapbox://styles/mapbox/light-v9",
+            center: [-118.243683, 34.052235], // starting position [lng, lat]
+            zoom: 12
         });
 
         // add markers to map
