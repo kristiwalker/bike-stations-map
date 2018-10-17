@@ -1,5 +1,5 @@
 # bike-stations-map
-This is an interactive map of potential bike share stations that allows users to submit feedback. You can find it live h
+This is an interactive map of potential bike share stations that allows users to submit feedback. [You can find it live here](https://bike-stations-map-kwalker.netlify.com/).
 
 ## Starter Environment
 We just needs a simple gulp environment that will spin up a server, pre-compile Sass and run a few other tasks. For simple projects like this, I use [gulp-starter-env](https://github.com/una/gulp-starter-env
