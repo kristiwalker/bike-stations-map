@@ -1,0 +1,100 @@
+/*------------------------------------*\
+  #SETTINGS
+\*------------------------------------*/
+/* colors */
+/* text sizes */
+/* screen sizes */
+/*------------------------------------*\
+  #BASICS
+\*------------------------------------*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  margin: 0; }
+
+/*------------------------------------*\
+  #APP
+\*------------------------------------*/
+.interactive-app {
+  width: 100vw;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "helvetica", "arial", sans-serif;
+  /*------------------------------------*\
+      #SIDE BAR
+    \*------------------------------------*/
+  /*------------------------------------*\
+      #MAP
+    \*------------------------------------*/ }
+  @media only screen and (max-width: 468px) {
+    .interactive-app {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+  .interactive-app .side-bar {
+    background: #007491;
+    height: 100vh;
+    width: 100%;
+    max-width: 400px;
+    padding: 3em; }
+    @media only screen and (max-width: 468px) {
+      .interactive-app .side-bar {
+        max-height: auto; } }
+  .interactive-app h1 {
+    color: white;
+    font-size: 30px; }
+  .interactive-app h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: normal; }
+  .interactive-app input,
+  .interactive-app textarea {
+    width: 100%;
+    font-size: 18px;
+    color: #666666; }
+  .interactive-app .form-elements label {
+    font-size: 18px;
+    color: white; }
+  .interactive-app .map-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; }
+  .interactive-app .map-container img#logo {
+    max-width: 120px;
+    position: absolute;
+    right: 10%;
+    top: 0;
+    z-index: 1; }
+  .interactive-app #map {
+    margin-bottom: 3em;
+    width: 100%;
+    height: 100%;
+    min-width: 500px; }
+  .interactive-app #map .marker {
+    background-size: cover;
+    background: #007491;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 3px solid #007491;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: white; }
