@@ -20,28 +20,28 @@
     <meta name='robots' content='noarchive' />
     <meta name='keywords' content='interactive map, bike share, bike, Los Angeles, LA, Alta, kristi walker' />
 
-    <!-- favicon -->
-
     <!-- styles -->
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
-
-    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet"> -->
-
 </head>
 
 <body>
-    <!-- app container -->
+    <!-- interactive app -->
     <div class="interactive-app">
+
+        <!-- side bar -->
         <div class="side-bar">
+
             <!-- intro copy -->
             <h1>Potential bike share stations in Los Angeles</h1>
             <h2>Explore proposed locations and share your thoughts on which areas bikes would most benefit you!</h2>
+            <!-- // end intro copy -->
 
+            <!-- form -->
             <form class="gform pure-form pure-form-stacked" method="POST" action="https://script.google.com/macros/s/AKfycbwf72PWZpb-9fEVNFFa-ZxHe6ALlpoWNqV9KLH7YQ/exec">
-                <!-- change the form action to your script url -->
 
+                <!-- form elements -->
                 <div class="form-elements">
                     <fieldset class="pure-group">
                         <label for="first-name">First name</label>
@@ -56,8 +56,7 @@
                     <fieldset class="pure-group">
                         <label for="email">Email</label>
                         <input id="email" name="email" type="email" value="" required placeholder="your.name@email.com" />
-                        <span class="email-invalid" style="display:none">
-          Must be a valid email address</span>
+                        <span class="email-invalid" style="display:none">Must be a valid email address</span>
                     </fieldset>
 
                     <fieldset class="pure-group">
@@ -66,32 +65,33 @@
                     </fieldset>
 
                     <button class="button-success pure-button button-xlarge">
-        <i class="fa fa-paper-plane"></i>&nbsp;Submit feedback</button>
+                    Submit feedback</button>
                 </div>
 
-                <!-- Customise the Thankyou Message People See when they submit the form: -->
                 <div class="thankyou_message" style="display:none;">
                     <h2>Thanks for your feedback!</h2>
                 </div>
-
             </form>
+            <!-- // end form elements -->
         </div>
+        <!-- // end side-bar -->
+
         <!-- map -->
-        <div class="map__container">
+        <div class="map-container">
             <img id="logo" src="img/alta-logo-white-on-red-2x.png" alt="Alta Planning + Design" />
             <div id="map"></div>
         </div>
+        <!-- // end map -->
 
-        <!-- feedback btn -->
-        <!-- // end app container -->
     </div>
-
+    <!-- // end interactive app -->
 
     <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js"></script>
     <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
     <script src="js/main.js"></script>
+    <!-- // end scripts -->
 </body>
 
 </html>

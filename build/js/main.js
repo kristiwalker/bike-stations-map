@@ -1,9 +1,9 @@
 /*jshint esversion: 6 */
 const app = {
     initScripts() {
-        app.getData();
+        app.addData();
     },
-    getData() {
+    addData() {
         $.getJSON('data/stations.geojson', function(data) {
             let stations = data;
 
@@ -24,15 +24,15 @@ const app = {
 
         // add markers to map
         data.features.forEach(function(marker, i) {
+
           // create a HTML element for each feature
           let el = document.createElement('div');
           el.className = 'marker';
           el.setAttribute('data-coords', marker.geometry.coordinates);
 
-          var span = document.createElement('span');
+          // create a numbered span for each
           var index = document.createTextNode(i + 1);
-          span.appendChild(index);
-          el.appendChild(span);
+          el.appendChild(index);
 
           // make a marker for each feature and add to the map
           new mapboxgl.Marker(el)
@@ -45,13 +45,6 @@ const app = {
 
         // enable navigation controls
         map.addControl(new mapboxgl.NavigationControl());
-    },
-    getSelectedMarker(data) {
-        $('.marker').click(function() {
-            jQuery('.marker').removeClass('selected');
-            jQuery(this).addClass('selected');
-            let markerIndex = jQuery(this).index();
-        });
     }
 };
 
